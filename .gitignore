@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+/src/main/java/com/turnos/turnos/Config
+/src/main/java/com/turnos/turnos/Ser
+/src/main/resources/application.properties
