@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/public/css/style.css}"  href="" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Formulario De Turnos</title>
+</head>
+<body style="background-color: #212121"> 
+    <h1  class="modificar-titulo" th:text="${turno.id == null} ? 'Ingrese turnos' : 'Edite turno'"></h1>
+
+    <form class="formulario" th:action="@{/}" th:object="${turno}" method="post">
+        <input type="hidden" th:field="*{id}">
+        
+        <div class="form-grup form-floating mb-3 ">
+            <input th:field="*{nombre}" type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+            <label for="nombre">Nombre</label>
+        </div>
+        
+        <div class="form-grup form-floating mb-3 ">
+          <input th:field="*{correo}" type="email" class="form-control" id="correo" placeholder="name@example.com" required>
+          <label for="nombre">Correo</label>
+      </div>
+
+        <div class="form-grup mb-3 ">
+            
+            <input th:field="*{fecha}" type="date" class="form-control" id="fecha" required>
+          </div>
+          
+        
+        <select th:field="*{hora}" class="form-grup form-select form-select-sm" aria-label="Small select example">
+            <option th:text="${turno.hora}"  th:value="${turno.hora}">Seleccione una hora</option>
+            <option th:each="hora : ${horasDisponibles}"
+                th:value="${hora}"
+                th:text="${#temporals.format(hora, 'HH:mm')}">
+        </option>
+        </select>
+        
+            <select th:field="*{ser}" class="form-grup form-select form-select-sm" aria-label="Small select example">
+                <option th:text="${turno.ser}" th:value="${turno.ser}">Seleccione el trabajo</option>
+                <option th:each="trabajo : ${trabajos}"
+                    th:value="${trabajo}"
+                    th:text="${trabajo}">
+            </option>
+            </select>
+
+          
+            <div class="form-grup radio">
+              <span>¿Necesita retiro?</span>
+              <div class="form-check">
+                <input th:field="*{retiro}" class="form-check-input" type="checkbox" th:value="si" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  sí
+                </label>
+              </div>
+            </div>
+            
+    
+
+        <button type="submit" class="form-grup btn-contacto">Agendar</button>
+        <a href="/">INICIO</a>
+    </form>
+
+
+
+    <script>
+        // Función para invertir una fecha en formato YYYY-MM-DD
+        function invertirFecha(fecha) {
+            if (!fecha) {
+            return "";
+            }
+        
+        // Separar la fecha DD/MM/YY
+        const [dia, mes, anioCorto] = fecha.split('/');
+        
+        // Convertir el año de 2 dígitos a 4 dígitos
+        // Asumimos que años 00-29 son 2000-2029, y 30-99 son 1930-1999
+        let anioCompleto = parseInt(anioCorto);
+        if (anioCompleto < 30) {  // Puedes ajustar este número según tus necesidades
+            anioCompleto = 2000 + anioCompleto;
+        } else {
+            anioCompleto = 1900 + anioCompleto;
+        }
+        
+        // Formatear a YYYY-MM-DD
+        // Asegurarse de que mes y día tengan dos dígitos
+        const mesFormateado = mes.padStart(2, '0');
+        const diaFormateado = dia.padStart(2, '0');
+        
+        return `${anioCompleto}-${mesFormateado}-${diaFormateado}`;
+            }
+
+        // Función para inicializar la fecha invertida al cargar la página
+        function inicializarFechaInvertida() {
+            const inputFecha = document.getElementById('fecha');
+            
+            // Fecha inicial (puedes cambiarla o recibirla desde tu backend)
+            const fechaInicial = inputFecha.getAttribute('value');
+            
+            // Invertir el formato
+            const fechaInvertida = invertirFecha(fechaInicial);
+
+            // Actualizar el valor del input con la fecha en formato original (YYYY-MM-DD)
+            inputFecha.value = fechaInvertida;
+
+          
+        }
+
+        // Ejecutar al cargar la página
+        document.addEventListener("DOMContentLoaded", inicializarFechaInvertida);
+    </script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>
