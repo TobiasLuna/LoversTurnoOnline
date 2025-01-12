@@ -1,0 +1,11 @@
+/home/tobias/Escritorio/Eclipse/turnos/src/main/java/com/turnos/turnos/Config/EmailConfig.java
+/home/tobias/Escritorio/Eclipse/turnos/src/main/java/com/turnos/turnos/Config/SecurityConfig.java
+/home/tobias/Escritorio/Eclipse/turnos/src/main/java/com/turnos/turnos/Controller/TurnoController.java
+/home/tobias/Escritorio/Eclipse/turnos/src/main/java/com/turnos/turnos/ControllerAd/GlobalExceptionHandler.java
+/home/tobias/Escritorio/Eclipse/turnos/src/main/java/com/turnos/turnos/Model/Turno.java
+/home/tobias/Escritorio/Eclipse/turnos/src/main/java/com/turnos/turnos/Repository/TurnoRepository.java
+/home/tobias/Escritorio/Eclipse/turnos/src/main/java/com/turnos/turnos/Ser/EmailSer.java
+/home/tobias/Escritorio/Eclipse/turnos/src/main/java/com/turnos/turnos/Ser/TurnoSer.java
+/home/tobias/Escritorio/Eclipse/turnos/src/main/java/com/turnos/turnos/TurnosApplication.java
+/home/tobias/Escritorio/Eclipse/turnos/src/main/java/com/turnos/turnos/TurnosDTO/Propiedades.java
+/home/tobias/Escritorio/Eclipse/turnos/src/main/java/com/turnos/turnos/TurnosDTO/PropiedadesConfEmail.java

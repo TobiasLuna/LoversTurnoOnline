@@ -1,0 +1,11 @@
+com/turnos/turnos/TurnosDTO/Propiedades.class
+com/turnos/turnos/TurnosApplication.class
+com/turnos/turnos/Model/Turno.class
+com/turnos/turnos/ControllerAd/GlobalExceptionHandler.class
+com/turnos/turnos/Ser/EmailSer.class
+com/turnos/turnos/Ser/TurnoSer.class
+com/turnos/turnos/Config/EmailConfig.class
+com/turnos/turnos/Repository/TurnoRepository.class
+com/turnos/turnos/Config/SecurityConfig.class
+com/turnos/turnos/TurnosDTO/PropiedadesConfEmail.class
+com/turnos/turnos/Controller/TurnoController.class
