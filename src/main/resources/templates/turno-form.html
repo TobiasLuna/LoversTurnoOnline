@@ -11,7 +11,7 @@
     <h1  class="modificar-titulo" th:text="${turno.id == null} ? 'Ingrese turnos' : 'Edite turno'"></h1>
 
     <form class="formulario" th:action="@{/}" th:object="${turno}" method="post">
-        <input type="hidden" th:field="*{id}">
+        <input id="id" type="hidden" th:field="*{id}">
         
         <div class="form-grup form-floating mb-3 ">
             <input th:field="*{nombre}" type="text" class="form-control" id="nombre" placeholder="Nombre" required>
@@ -57,9 +57,12 @@
             </div>
             
     
-
-        <button type="submit" class="form-grup btn-contacto">Agendar</button>
-        <a href="/">INICIO</a>
+    <div class="modificar">
+        <button type="submit"  class="btn-contacto">Editar</button>
+        <a id="url" class="cancelar" > cancelar</a>
+    
+    </div>
+        
     </form>
 
 
@@ -107,8 +110,20 @@
           
         }
 
+        //Funcion para url eliminar
+        function funcionUrlEliminar(){
+            const input = document.getElementById('id');
+            const link = document.getElementById('url');
+        
+            const url = input.value.trim(); // Eliminar espacios
+            link.href = "/eliminar/"+url; // Actualizar el href del enlace
+            console.log(link.href);
+           
+        }
         // Ejecutar al cargar la página
         document.addEventListener("DOMContentLoaded", inicializarFechaInvertida);
+        document.addEventListener("DOMContentLoaded", funcionUrlEliminar);
+
     </script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

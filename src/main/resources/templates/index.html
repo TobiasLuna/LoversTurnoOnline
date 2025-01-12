@@ -210,20 +210,16 @@
               <button type="submit" class="form-grup btn-contacto">Agendar</button>
       
           </form>
-                 
-          <form th:action="@{/}" th:object="${turno}" method="post">
+   
+          <form th:action="@{/editar}" th:object="${turno}" method="post">
             <div class="modificar">
               <p>¿Requiere modificar o cancelar?</p>
               <span>Ingrese su codigo</span>
               <div class="input-group flex-nowrap">
                 <span class="input-group-text" id="addon-wrapping">#</span>
-                <input type="text" class="form-control" placeholder="" aria-label="id" aria-describedby="addon-wrapping">
+                <input type="text" class="form-control" th:field="*{id}" placeholder="Ingrese su código" aria-label="id" aria-describedby="addon-wrapping">
               </div>
-           
-              <div class="botones">
-                <a href="" ><button class="btn" id="modificar">MODIFICAR</button></a>
-                <a href="" ><button class="btn" id="cancelar">CANCELAR</button></a>
-              </div>
+              <button type="submit" class="botones ">MODIFICAR</button>
             </div>
           </form>
         

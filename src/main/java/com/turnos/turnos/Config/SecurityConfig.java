@@ -23,9 +23,14 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/").permitAll()
+                .requestMatchers("/editar").permitAll()
+                .requestMatchers("/editar/*").permitAll()
+                .requestMatchers("/eliminar").permitAll()
+                .requestMatchers("/eliminar/*").permitAll()
                 .requestMatchers("/public/**").permitAll()
                 .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**").permitAll()
                 .requestMatchers("/login", "/error").permitAll()
+                
                 .requestMatchers("/turno/lista/**").authenticated()
                 .requestMatchers("/turno/editar/**").authenticated()
                 .requestMatchers("/turno/eliminar/**").authenticated()

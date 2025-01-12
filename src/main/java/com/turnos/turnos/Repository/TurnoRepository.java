@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.turnos.turnos.Model.Turno;
 
-public interface TurnoRepository extends JpaRepository <Turno,Long>{
-    boolean existsById(String id);
+public interface TurnoRepository extends JpaRepository <Turno,Integer>{
+    boolean existsById(Integer id);
 
     boolean existsByFechaAndHora(LocalDate fecha, LocalTime hora);
 

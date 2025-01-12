@@ -2,11 +2,10 @@ package com.turnos.turnos.Model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Random;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
@@ -14,8 +13,7 @@ import lombok.Data;
 @Data
 public class Turno {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String correo;
     private LocalDate fecha;
     @Column

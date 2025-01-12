@@ -3,6 +3,7 @@ package com.turnos.turnos.Ser;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.Random;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,16 +22,17 @@ public class TurnoSer {
     }
 
     public Turno guardar(Turno t) {
+        t.setId(generarCodigoAleatorio());
         validarFecha(t.getFecha(),t.getHora());
         validarCorreo(t.getCorreo());
         return turnoRepository.save(t);
     }
 
-    public Turno obtenerPorId(Long id) {
+    public Turno obtenerPorId(Integer id) {
         return turnoRepository.findById(id).orElse(null);
     }
 
-    public void Eliminar(Long id) {
+    public void Eliminar(Integer id) {
         turnoRepository.deleteById(id);
     }
 
@@ -62,7 +64,16 @@ public class TurnoSer {
         }
     } 
 
-    public boolean existeCodigo(String codigo) {
-        return turnoRepository.existsById(codigo);
+    public void existeCodigo(Integer codigo) {
+        if(!turnoRepository.existsById(codigo) || codigo == null)
+        {
+            throw new IllegalArgumentException("El codigo no es correcto");
+        }
+    }
+
+      // Método para generar un código aleatorio de 4 dígitos
+    private Integer generarCodigoAleatorio() {
+        Random random = new Random();
+        return 1000 + random.nextInt(9000); // Genera un número entre 1000 y 9999
     }
 }

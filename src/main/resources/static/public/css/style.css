@@ -214,27 +214,21 @@ section .item {
   margin-bottom: 10px;
 }
 .contacto .modificar .botones {
-  display: flex;
-  flex-direction: row;
-  gap: 5;
-}
-.contacto .modificar .botones .btn {
-  background: none;
-  border: 1px solid #fff;
+  margin-top: 1rem;
+  border: 1px solid #ec407a;
   text-transform: uppercase;
-  gap: 10;
-  margin-top: 10px;
-  margin-left: 10px;
-  color: #fff;
-  font-size: 13px;
+  border-radius: 5%;
+  background: none;
+  color: #ec407a;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
 }
-.contacto .modificar .botones #modificar:hover {
-  box-shadow: 0 0 15px #40ec6b;
-  text-shadow: 0 0 15px #40ec6b;
+.contacto .modificar .botones:hover {
+  box-shadow: 0 0 15px #ec407a;
+  text-shadow: 0 0 15px #ec407a;
 }
-.contacto .modificar .botones #cancelar:hover {
-  box-shadow: 0 0 15px #ec4040;
-  text-shadow: 0 0 15px #ec4040;
+.contacto .modificar a {
+  border: 1px solid #ec407a;
 }
 .contacto h4 {
   font-family: "Playfair Display", serif;

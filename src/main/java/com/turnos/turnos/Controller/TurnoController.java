@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.turnos.turnos.Model.Turno;
@@ -90,8 +91,26 @@ public class TurnoController {
         return "turno-lista";
     }
 
+    @PostMapping("/editar")
+    public String procesarId(@RequestParam(name = "id", defaultValue = "0") Integer id ,RedirectAttributes redirectAttributes)
+    {
+        if (id == 0) {
+            redirectAttributes.addFlashAttribute("error", "El código no puede estar vacío.");
+            return "redirect:/#TURNO";
+        }
+        try{
+            turnoSer.existeCodigo(id);
+            redirectAttributes.addFlashAttribute("success", "Turno registrado exitosamente.");
+            return "redirect:/editar/"+id;
+        } catch (IllegalArgumentException e) {
+                redirectAttributes.addFlashAttribute("error", e.getMessage());
+                return "redirect:/#TURNO"; // Redirige a la sección de turnos en caso de error
+        }
+      
+    }
+
     @GetMapping("/editar/{id}")
-    public String editarTurno(@PathVariable Long id, Model model) {
+    public String editarTurno(@PathVariable Integer id, Model model) {
         Turno turno = turnoSer.obtenerPorId(id);
         if (turno != null) {
             List<LocalTime> horasOcupadas = turnoRes.findHorasByFecha(LocalDate.now());
@@ -106,15 +125,15 @@ public class TurnoController {
     }
 
     @GetMapping("/eliminar/{id}")
-    public String eliminarTurno(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+    public String eliminarTurno(@PathVariable Integer id, RedirectAttributes redirectAttributes) {
         turnoSer.Eliminar(id);
         redirectAttributes.addFlashAttribute("success", "Turno cancelado exitosamente.");
-        return "redirect:/#TURNO"; // Redirección ajustada al prefijo
+        return "redirect:/"; // Redirección ajustada al prefijo
     }
 
 
     @GetMapping("/turno/editar/{id}")
-    public String editarTurnoAdmin(@PathVariable Long id, Model model) {
+    public String editarTurnoAdmin(@PathVariable Integer id, Model model) {
         Turno turno = turnoSer.obtenerPorId(id);
         if (turno != null) {
             List<LocalTime> horasOcupadas = turnoRes.findHorasByFecha(LocalDate.now());
@@ -125,11 +144,11 @@ public class TurnoController {
             model.addAttribute("turno", turno);
             return "turno-form";
         }
-        return "redirect:/#TURNO"; // Redirección ajustada al prefijo
+        return "redirect:/turno/lista"; // Redirección ajustada al prefijo
     }
 
     @GetMapping("/turno/eliminar/{id}")
-    public String eliminarTurnoAdmin(@PathVariable Long id) {
+    public String eliminarTurnoAdmin(@PathVariable Integer id) {
         turnoSer.Eliminar(id);
         return "redirect:/turno/lista"; // Redirección ajustada al prefijo
     }

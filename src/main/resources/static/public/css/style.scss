@@ -246,28 +246,22 @@ section {
         margin-bottom: 10px;
         
         .botones{
-            display: flex;
-            flex-direction: row;
-            gap: 5;
-
-            .btn{
-                background: none;
-                border: 1px solid #fff;
-                text-transform: uppercase;
-                gap: 10;
-                margin-top: 10px;
-                margin-left: 10px;
-                color: #fff;
-                font-size: 13px;
+            margin-top: 1rem;
+            border: 1px solid $color-btn;
+            text-transform: uppercase;
+            border-radius: 5%;
+            background: none;
+            color: $color-btn;
+            font-size: 1rem;
+            font-family: $font-p;
+    
+            &:hover {
+                box-shadow: 0 0 15px #ec407a;
+                text-shadow: 0 0 15px #ec407a;
             }
-            #modificar:hover{
-                box-shadow: 0 0 15px #40ec6b;
-                text-shadow: 0 0 15px #40ec6b;
-            }
-            #cancelar:hover{
-                box-shadow: 0 0 15px #ec4040;
-                text-shadow: 0 0 15px #ec4040;
-            }
+        }
+        a{
+            border: 1px solid #ec407a;
         }
     }
     h4 {
@@ -306,6 +300,7 @@ section {
     margin: 0 auto;
     padding: 1rem;
     
+
     a{
         text-decoration: none;
         text-transform: uppercase;
@@ -328,7 +323,6 @@ section {
         flex-direction: column;
         color: #fff;
         }
-
     .btn-contacto {
         margin-top: 1rem;
         border: 1px solid $color-btn;
