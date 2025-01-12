@@ -1,8 +1,7 @@
-FROM maven:3.9.9-eclipse-temurin-23-alpine AS build
-COPY . .
-RUN mvn clean package -DskipTests
+FROM openjdk:21
 
-FROM  eclipse-temurin:23-alpine
-COPY --from=build /target/*.jar turnos.jar
+COPY ./target/turnos-0.0.1-SNAPSHOT.jar app.jar
+
 EXPOSE 8080
-ENTRYPOINT [ "java", "jar", "turnos.jar" ]
+
+ENTRYPOINT [ "java" , "-jar" , "/app.jar" ]
