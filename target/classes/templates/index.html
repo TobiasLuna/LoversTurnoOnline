@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/public/css/style.css}"  href="" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+
+    <!--Remi-->
+    
+
+
+    <title th:text="${titulo}"></title>
+</head>
+<body style="background-color: #212121">
+    <nav class="navbar navbar-expand-lg  fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">LOVERS</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">LOVERS</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" th:each="seccion : ${secciones}">
+                <li class="nav-item">
+                  <a class="nav-link"  th:href="'#'+${seccion}" th:text="${seccion}"></a>
+                </li>
+              </ul>
+           
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <section id="INICIO" class="home">
+        <div class="container inicio item" >
+         
+            <div class="text">
+                <h4>Manos que inspiran, uñas que brillan</h4>
+                <p>
+                  En LOVERS STUDIO, nos especializamos en 
+                  realzar la belleza de tus manos con diseños únicos y 
+                  cuidados profesionales. Descubre un mundo de colores,
+                  estilos y tendencias que se adaptan a tu personalidad. 
+                  Porque tus uñas no solo son un detalle, ¡son tu mejor 
+                  accesorio!
+                </p>
+                <a href="/#TURNO"><button class="btn-contacto">PEDIR TURNO</button></a>
+            </div>
+            <div class="imagen">
+                <img th:src="@{/public/img/inicio.jpeg}" alt="">
+            </div>
+     
+        </div>
+      </section>
+
+      <section id="SERVICIOS" class="ser sect">
+
+        <div class="container tarjetas item" >
+            <div class="card" style="max-width: 18rem;">
+                <div class="card-header">
+                    <img th:src="@{/public/img/soft.png}" alt="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">SOFTGEL</h5>
+                  <p class="card-text">
+                    Extensiones ligeras y flexibles que lucen naturales y cómodas.
+                  </p>
+                </div>
+              </div>
+
+              
+                <div class="card" style="max-width: 18rem;">
+                    <div class="card-header">
+                        <img th:src="@{/public/img/semi.png}" alt="">
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">SEMIPERMANENTE</h5>
+                      <p class="card-text"> 
+                        Manicura duradera con esmalte en gel que ofrece brillo y resistencia por semanas.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="card" style="max-width: 18rem;">
+                    <div class="card-header">
+                        <img th:src="@{/public/img/nailsart.png}" alt="">
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">NAILSART</h5>
+                      <p class="card-text">
+                        Diseños personalizados para uñas que reflejan tu estilo único.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="card" style="max-width: 18rem;">
+                    <div class="card-header">
+                        <img th:src="@{/public/img/capping.png}" alt="">
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">CAPPING</h5>
+                      <p class="card-text">
+                        Refuerzo de uñas naturales con gel para mayor protección y fuerza.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="card" style="max-width: 18rem;">
+                    <div class="card-header">
+                        <img th:src="@{/public/img/presson.png}" alt="">
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">PRESS-ON</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                  </div>
+        </div>
+      </section>
+      
+      <section id="PRECIOS" class="art">
+        <div class="container item">
+               
+                <h4>PRECIOS</h4>
+
+          
+                <h5>SOFTGEL LISO..................$<span th:text="${SOFTLISO}"></span></h5>
+                <h5>SOFTGEL + DIEÑO SIMPLE..................$<span th:text="${SOFTDISEÑOSIMPLE}"></span></h5>
+                <h5>SOFTGEL FULL..................$<span th:text="${SOFTFULL}"></span></h5>
+                <h5>SOFTGEL + APLIQUES..................$<span th:text="${SOFTAPLIQUES}"></span></p></h5>
+                <h5>SEMIPERMANENTE..................$<span th:text="${SEMI}"></span></h5>
+                <h5>CAPPING..................$<span th:text="${CAPPING}"></span></p></h5>
+        </div>
+    </section>
+   
+
+
+    <section id="TURNO" class="contacto">
+        <div class="container contenedor">
+            <h4>PEDIR TURNO</h4>
+
+              <!-- Mostrar mensajes basados en parámetros -->
+              <div th:if="${error}" class="alert alert-danger" role="alert">
+                <p th:text="${error}"></p>
+            </div>
+            
+            <div th:if="${success}" class="alert alert-success" role="alert">
+                <p th:text="${success}"></p>
+            </div>
+
+            <form class="formulario" th:action="@{/}" th:object="${turno}" method="post">
+              <input type="hidden" th:field="*{id}">
+              
+              <div class="form-grup form-floating mb-3 ">
+                  <input th:field="*{nombre}" type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                  <label for="nombre">Nombre</label>
+              </div>
+              
+              <div class="form-grup form-floating mb-3 ">
+                <input th:field="*{correo}" type="email" class="form-control" id="correo" placeholder="name@example.com" required>
+                <label for="nombre">Correo</label>
+            </div>
+
+              <div class="form-grup mb-3 ">
+                  
+                  <input th:field="*{fecha}" type="date" class="form-control" id="fecha" required>
+                </div>
+                
+              
+              <select th:field="*{hora}" class="form-grup form-select form-select-sm" aria-label="Small select example">
+                  <option value="">Seleccione una hora</option>
+                  <option th:each="hora : ${horasDisponibles}"
+                      th:value="${hora}"
+                      th:text="${#temporals.format(hora, 'HH:mm')}">
+              </option>
+              </select>
+              
+                  <select th:field="*{ser}" class="form-grup form-select form-select-sm" aria-label="Small select example">
+                      <option value="">Seleccione el trabajo</option>
+                      <option th:each="trabajo : ${trabajos}"
+                          th:value="${trabajo}"
+                          th:text="${trabajo}">
+                  </option>
+                  </select>
+
+                
+                  <div class="form-grup radio">
+                    <span>¿Necesita retiro?</span>
+                    <div class="form-check">
+                      <input th:field="*{retiro}" class="form-check-input" type="checkbox" th:value="si" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        sí
+                      </label>
+                    </div>
+                  </div>
+                  
+          
+
+              <button type="submit" class="form-grup btn-contacto">Agendar</button>
+      
+          </form>
+   
+          <form th:action="@{/editar}" th:object="${turno}" method="post">
+            <div class="modificar">
+              <p>¿Requiere modificar o cancelar?</p>
+              <span>Ingrese su codigo</span>
+              <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">#</span>
+                <input type="text" class="form-control" th:field="*{id}" placeholder="Ingrese su código" aria-label="id" aria-describedby="addon-wrapping">
+              </div>
+              <button type="submit" class="botones ">MODIFICAR</button>
+            </div>
+          </form>
+        
+      
+    </section>
+</body>
+
+</html><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
