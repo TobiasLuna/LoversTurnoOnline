@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM  eclipse-temurin:23-alpine
-COPY --from=build /target/turnos-0.0.1-SNAPSHOT.jar turnos.jar
+COPY --from=build /target/turnos-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
-ENTRYPOINT [ "java", "jar", "turnos.jar" ]
+ENTRYPOINT [ "java", "jar", "app.jar" ]
