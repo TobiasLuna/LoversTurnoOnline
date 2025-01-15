@@ -37,8 +37,7 @@ public class TurnoSer {
     }
 
     private void validarFecha(LocalDate fecha,LocalTime hora) {
-        LocalTime incio = LocalTime.of(9,00);
-        LocalTime fin = LocalTime.of(21, 00);
+        
         if (fecha == null) {
             throw new IllegalArgumentException("La fecha no puede ser nula");
         }
@@ -48,10 +47,7 @@ public class TurnoSer {
         if (turnoRepository.existsByFechaAndHora(fecha, hora)) {
             throw new IllegalArgumentException("Ya existe un evento para la fecha: ");
         }
-        if(turnoRepository.existsEnRangoHorario(fecha, incio, fin))
-        {
-            throw new IllegalArgumentException("Fuera de horario");
-        }
+    
     }
 
     private void validarCorreo(String correo)
