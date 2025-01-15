@@ -120,11 +120,6 @@ public class TurnoController {
             model.addAttribute("horasDisponibles", horasDisponibles);
             model.addAttribute("turno", turno);
 
-            //mensaje de modificacion
-            String mensajeC =  "Hola Day soy tu Bot de turnos!🤖 \n Se modifico el turno para: "+ turno.getNombre()+
-            "\n ahora es el dia "+ turno.getFecha()+"\n a las: "+turno.getHora();
-            emailService.sendSimpleEmail("lunatobias502@gmail.com", "Turno modificado", mensajeC);
-
             return "turno-form";
         }
         return "redirect:/#TURNO"; // Redirección ajustada al prefijo
@@ -155,11 +150,6 @@ public class TurnoController {
             model.addAttribute("trabajos", trabajos);
             model.addAttribute("horasDisponibles", horasDisponibles);
             model.addAttribute("turno", turno);
-
-            //mensaje de modificacion
-            String mensajeC =  "Hola Day soy tu Bot de turnos!🤖 \n Se modifico el turno para: "+ turno.getNombre()+
-            "\n ahora es el dia "+ turno.getFecha()+"\n a las: "+turno.getHora();
-            emailService.sendSimpleEmail("lunatobias502@gmail.com", "Turno modificado", mensajeC);
 
             return "turno-form";
         }

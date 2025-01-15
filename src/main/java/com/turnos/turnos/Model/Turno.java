@@ -2,7 +2,7 @@ package com.turnos.turnos.Model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Random;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
