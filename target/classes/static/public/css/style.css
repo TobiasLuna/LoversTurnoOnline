@@ -102,8 +102,7 @@ section .item {
 .home .inicio .imagen img {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 @media (max-width: 768px) {
@@ -123,6 +122,7 @@ section .item {
 }
 @media (max-width: 576px) {
   .home .inicio .text h4 {
+    margin-top: 20px;
     font-size: 1.5rem;
   }
   .home .inicio .imagen {
@@ -161,8 +161,7 @@ section .item {
 .sect .tarjetas img {
   width: 100px;
   height: 100px;
-  -o-object-fit: cover;
-     object-fit: cover; /* Mantener proporción */
+  object-fit: cover; /* Mantener proporción */
 }
 @media (max-width: 768px) {
   .sect .tarjetas {
@@ -302,4 +301,6 @@ section .item {
   section {
     margin-bottom: 3rem;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
