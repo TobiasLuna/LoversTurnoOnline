@@ -119,14 +119,27 @@ public class TurnoController {
             model.addAttribute("trabajos", trabajos);
             model.addAttribute("horasDisponibles", horasDisponibles);
             model.addAttribute("turno", turno);
+
+            //mensaje de modificacion
+            String mensajeC =  "Hola Day soy tu Bot de turnos!🤖 \n Se modifico el turno para: "+ turno.getNombre()+
+            "\n ahora es el dia "+ turno.getFecha()+"\n a las: "+turno.getHora();
+            emailService.sendSimpleEmail("lunatobias502@gmail.com", "Turno modificado", mensajeC);
+
             return "turno-form";
         }
         return "redirect:/#TURNO"; // Redirección ajustada al prefijo
     }
 
     @GetMapping("/eliminar/{id}")
-    public String eliminarTurno(@PathVariable Integer id, RedirectAttributes redirectAttributes) {
+    public String eliminarTurno(@PathVariable Integer id,Turno turno ,RedirectAttributes redirectAttributes) {
+        turno = turnoSer.obtenerPorId(id);
         turnoSer.Eliminar(id);
+
+        //mensaje de modificacion
+        String mensajeC =  "Hola Day soy tu Bot de turnos!🤖 \n Se elimino el turno para: "+ turno.getNombre()+
+        "\n se libero el dia "+ turno.getFecha()+"\n a las: "+turno.getHora();
+        emailService.sendSimpleEmail("lunatobias502@gmail.com", "Turno modificado", mensajeC);
+
         redirectAttributes.addFlashAttribute("success", "Turno cancelado exitosamente.");
         return "redirect:/"; // Redirección ajustada al prefijo
     }
@@ -142,14 +155,27 @@ public class TurnoController {
             model.addAttribute("trabajos", trabajos);
             model.addAttribute("horasDisponibles", horasDisponibles);
             model.addAttribute("turno", turno);
+
+            //mensaje de modificacion
+            String mensajeC =  "Hola Day soy tu Bot de turnos!🤖 \n Se modifico el turno para: "+ turno.getNombre()+
+            "\n ahora es el dia "+ turno.getFecha()+"\n a las: "+turno.getHora();
+            emailService.sendSimpleEmail("lunatobias502@gmail.com", "Turno modificado", mensajeC);
+
             return "turno-form";
         }
         return "redirect:/turno/lista"; // Redirección ajustada al prefijo
     }
 
     @GetMapping("/turno/eliminar/{id}")
-    public String eliminarTurnoAdmin(@PathVariable Integer id) {
+    public String eliminarTurnoAdmin(@PathVariable Integer id,Turno turno) {
+        turno = turnoSer.obtenerPorId(id);
         turnoSer.Eliminar(id);
+
+        //mensaje de eliminacion
+        String mensajeC =  "Hola Day soy tu Bot de turnos!🤖 \n Se elimino el turno para: "+ turno.getNombre()+
+        "\n se libero el dia "+ turno.getFecha()+"\n a las: "+turno.getHora();
+        emailService.sendSimpleEmail("lunatobias502@gmail.com", "Turno moficado", mensajeC);
+
         return "redirect:/turno/lista"; // Redirección ajustada al prefijo
     }
 
