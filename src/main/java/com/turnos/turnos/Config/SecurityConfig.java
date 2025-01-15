@@ -66,7 +66,7 @@ public class SecurityConfig {
 
         UserDetails admin = User.builder()
             .username("admin")
-            .password(passwordEncoder.encode("admin"))
+            .password(passwordEncoder.encode("Damaris-2406-Nails"))
             .roles("ADMIN")
             .build();
 
