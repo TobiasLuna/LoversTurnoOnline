@@ -1,8 +1,14 @@
+# Etapa 1: Construcción
 FROM maven:3.9.9-eclipse-temurin-23-alpine AS build
-COPY . .
+WORKDIR /app
+COPY pom.xml ./
+COPY src ./src
 RUN mvn clean package -DskipTests
 
-FROM  eclipse-temurin:23-alpine
-COPY --from=build /target/*.jar app.jar
+# Etapa 2: Ejecución
+FROM eclipse-temurin:23-alpine
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
+
 EXPOSE 8080
-ENTRYPOINT [ "java", "-jar", "app.jar" ]
+ENTRYPOINT ["java", "-jar", "app.jar"]
