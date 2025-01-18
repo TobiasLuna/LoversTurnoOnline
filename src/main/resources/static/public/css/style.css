@@ -130,60 +130,12 @@ section .item {
   }
 }
 
-.sect .tarjetas {
-  display: flex;
-  flex-wrap: wrap; /* Permitir que las tarjetas se ajusten automáticamente */
-  justify-content: center;
-  align-items: stretch;
-  gap: 20px; /* Espaciado consistente entre tarjetas */
-}
-.sect .tarjetas .card {
-  background: none;
-  flex: 1 1 calc(33.333% - 20px); /* 3 tarjetas por fila en pantallas grandes */
-  min-width: 280px; /* Tamaño mínimo para tarjetas */
-  max-width: 320px; /* Tamaño máximo para tarjetas */
-  border: 1px solid #fff;
-  box-shadow: 0 0 5px #ec407a;
-  padding: 1rem;
-  min-height: 250px; /* Evitar que las tarjetas sean demasiado pequeñas */
-}
-.sect .tarjetas div {
-  text-align: center;
-}
-.sect .tarjetas div h5 {
-  color: #fff;
-  text-shadow: 0 0 5px #ec407a, 0 0 15px #ec407a, 0 0 30px #ec407a, 0 0 50px #ec407a;
-  text-transform: uppercase;
-}
-.sect .tarjetas div p {
-  color: #fff;
-}
-.sect .tarjetas img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover; /* Mantener proporción */
-}
-@media (max-width: 768px) {
-  .sect .tarjetas {
-    flex-direction: column; /* Tarjetas en una sola columna */
-    justify-content: center;
-    align-items: center;
-  }
-  .sect .tarjetas .card {
-    flex: 1 1 100%; /* Tarjetas toman el 100% del ancho */
-  }
-  .sect .tarjetas img {
-    width: 80px;
-    height: 80px;
-  }
-}
-
-.curso h2{
+.curso h2 {
   text-align: center;
   text-transform: uppercase;
-  color:#fff;
+  color: #fff;
 }
-.curso p{
+.curso p {
   font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: center;
@@ -243,6 +195,51 @@ section .item {
   }
 }
 
+.sect .tarjetas {
+  display: flex;
+  flex-wrap: wrap; /* Permitir que las tarjetas se ajusten automáticamente */
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px; /* Espaciado consistente entre tarjetas */
+}
+.sect .tarjetas .card {
+  background: none;
+  flex: 1 1 calc(33.333% - 20px); /* 3 tarjetas por fila en pantallas grandes */
+  min-width: 280px; /* Tamaño mínimo para tarjetas */
+  max-width: 320px; /* Tamaño máximo para tarjetas */
+  border: 1px solid #fff;
+  box-shadow: 0 0 5px #ec407a;
+  padding: 1rem;
+  min-height: 250px; /* Evitar que las tarjetas sean demasiado pequeñas */
+}
+.sect .tarjetas div {
+  text-align: center;
+}
+.sect .tarjetas div h5 {
+  color: #fff;
+  text-shadow: 0 0 5px #ec407a, 0 0 15px #ec407a, 0 0 30px #ec407a, 0 0 50px #ec407a;
+  text-transform: uppercase;
+}
+.sect .tarjetas div p {
+  color: #fff;
+}
+.sect .tarjetas img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* Mantener proporción */
+}
+@media (max-width: 768px) {
+  .sect .tarjetas {
+    flex-direction: column; /* Tarjetas en una sola columna */
+  }
+  .sect .tarjetas .card {
+    flex: 1 1 100%; /* Tarjetas toman el 100% del ancho */
+  }
+  .sect .tarjetas img {
+    width: 80px;
+    height: 80px;
+  }
+}
 
 .art {
   display: flex;
