@@ -62,7 +62,7 @@ public class TurnoController {
             //Mensaje para propietario
             String mensajeP = "Hola Day soy tu Bot de turnos!🤖 \n Tenes un turno para: "+ turno.getNombre()+" \n su correo es: "+ turno.getCorreo()+"\n se realiza un: "+ turno.getSer()
             +"\n el dia "+ turno.getFecha()+"\n a las: "+turno.getHora();
-            emailService.sendSimpleEmail("lunatobias502@gmail.com", "Turno", mensajeP);
+            emailService.sendSimpleEmail("dayrabarros2002@gmail.com", "Turno", mensajeP);
             //Mensaje para el cliente
             String mensajeC = "Se agendo el turno para el dia "+turno.getFecha()+" a las "+turno.getHora()
             +"\n Si necesitas cambiar el tunro o cancelar, se puede hacer con el codigo: #"+turno.getId()
@@ -133,7 +133,7 @@ public class TurnoController {
         //mensaje de modificacion
         String mensajeC =  "Hola Day soy tu Bot de turnos!🤖 \n Se elimino el turno para: "+ turno.getNombre()+
         "\n se libero el dia "+ turno.getFecha()+"\n a las: "+turno.getHora();
-        emailService.sendSimpleEmail("lunatobias502@gmail.com", "Turno modificado", mensajeC);
+        emailService.sendSimpleEmail("dayrabarros2002@gmail.com", "Turno modificado", mensajeC);
 
         redirectAttributes.addFlashAttribute("success", "Turno cancelado exitosamente.");
         return "redirect:/"; // Redirección ajustada al prefijo
@@ -164,7 +164,7 @@ public class TurnoController {
         //mensaje de eliminacion
         String mensajeC =  "Hola Day soy tu Bot de turnos!🤖 \n Se elimino el turno para: "+ turno.getNombre()+
         "\n se libero el dia "+ turno.getFecha()+"\n a las: "+turno.getHora();
-        emailService.sendSimpleEmail("lunatobias502@gmail.com", "Turno moficado", mensajeC);
+        emailService.sendSimpleEmail("dayrabarros2002@gmail.com", "Turno moficado", mensajeC);
 
         return "redirect:/turno/lista"; // Redirección ajustada al prefijo
     }
@@ -192,6 +192,7 @@ public class TurnoController {
         trabajos.add("SOFTGEL + APLIQUES");
         trabajos.add("SOFTGEL + FULL");
         trabajos.add("PRESSON");
+        trabajos.add("PRESSON FULL SET");
         return trabajos;
     }
 }

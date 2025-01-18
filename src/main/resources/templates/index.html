@@ -21,7 +21,7 @@
 <body style="background-color: #212121">
     <nav class="navbar navbar-expand-lg  fixed-top" data-bs-theme="dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">LOVERS</a>
+          <a class="navbar-brand" href="#">LOVERS STUDIO</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -123,12 +123,64 @@
                     </div>
                     <div class="card-body">
                       <h5 class="card-title">PRESS-ON</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p class="card-text"></p>
                     </div>
                   </div>
         </div>
       </section>
       
+      <section id="CURSOS" class="container curso">
+        <h2>CURSOS</h2>
+        <p>
+          Los cursos son personalizados, el día y horario es a coordinar,
+           los materiales son aportados.
+          se pide una seña de $10.000 
+          para poder reservar el curso,
+           cada uno de ellos dura una hora y media para que
+          la alumna esté tranquila al realizar los prácticas y
+           haga todo a tu tiempo
+        </p>
+        <div class="tarjetas">
+          <div class="card" style="max-width: 18rem;">
+            <div class="card-header">
+                <img th:src="@{/public/img/semi.jpeg}" alt="">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">SEMIPERMANENTE</h5>
+              <p class="card-text">
+                $30.000
+              </p>
+            </div>
+          </div>
+
+          <div class="card" style="max-width: 18rem;">
+            <div class="card-header">
+                <img th:src="@{/public/img/softgel.jpeg}" alt="">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">SOFTGEL</h5>
+              <p class="card-text">
+                $35.000
+              </p>
+            </div>
+          </div>
+
+
+          <div class="card" style="max-width: 18rem;">
+            <div class="card-header">
+                <img th:src="@{/public/img/nailsart.jpeg}" alt="">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">NAILS ART</h5>
+              <p class="card-text">
+                $45.000
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       <section id="PRECIOS" class="art">
         <div class="container item">
                
@@ -141,6 +193,8 @@
                 <h5>SOFTGEL + APLIQUES..................$<span th:text="${SOFTAPLIQUES}"></span></p></h5>
                 <h5>SEMIPERMANENTE..................$<span th:text="${SEMI}"></span></h5>
                 <h5>CAPPING..................$<span th:text="${CAPPING}"></span></p></h5>
+                <h5>PRESS ON..................$<span th:text="${PRESSON}"></span></p></h5>
+                <h5>PRESS ON FULL SET..................$<span th:text="${PRESSONFULLSET}"></span></p></h5>
         </div>
     </section>
    
@@ -174,7 +228,7 @@
 
               <div class="form-grup mb-3 ">
                   
-                  <input th:field="*{fecha}" type="date" class="form-control" id="fecha" required>
+                  <input placeholder="dd/mm/yyyy" th:field="*{fecha}" type="date" class="form-control" id="fecha" required>
                 </div>
                 
               

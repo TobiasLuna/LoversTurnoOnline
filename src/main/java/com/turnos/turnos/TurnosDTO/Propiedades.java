@@ -20,6 +20,7 @@ public class Propiedades {
         
         secciones.add("INICIO");
         secciones.add("SERVICIOS");
+        secciones.add("CURSOS");
         secciones.add("PRECIOS");
         secciones.add("TURNO");
 
@@ -27,7 +28,9 @@ public class Propiedades {
         articulos.put("SOFTDISEÑOSIMPLE", 15500);
         articulos.put("SOFTFULL", 16000);
         articulos.put("SOFTAPLIQUES", 18000);
-        articulos.put("SEMI", 9500);
-        articulos.put("CAPPING", 9500);
+        articulos.put("SEMI", 12000);
+        articulos.put("CAPPING", 13500);
+        articulos.put("PRESSON", 9000);
+        articulos.put("PRESSONFULLSET", 13000);
     }
 }
