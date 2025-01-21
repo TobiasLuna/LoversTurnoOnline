@@ -223,10 +223,12 @@ section .item {
 .sect .tarjetas div p {
   color: #fff;
 }
-.sect .tarjetas img {
+.sect .tarjetas i {
   width: 100px;
   height: 100px;
+  font-size: 40px;
   object-fit: cover; /* Mantener proporción */
+  color: #ec407a;
 }
 @media (max-width: 768px) {
   .sect .tarjetas {
@@ -235,7 +237,7 @@ section .item {
   .sect .tarjetas .card {
     flex: 1 1 100%; /* Tarjetas toman el 100% del ancho */
   }
-  .sect .tarjetas img {
+  .sect .tarjetas i {
     width: 80px;
     height: 80px;
   }
