@@ -171,8 +171,8 @@ public class TurnoController {
 
     private List<LocalTime> generarHorariosDisponibles(List<LocalTime> horasOcupadas) {
         List<LocalTime> horasDisponibles = new ArrayList<>();
-        LocalTime inicio = LocalTime.of(9, 0);
-        LocalTime fin = LocalTime.of(20, 0);
+        LocalTime inicio = LocalTime.of(13, 0);
+        LocalTime fin = LocalTime.of(19, 0);
         
         while (!inicio.isAfter(fin)) {
             if (!horasOcupadas.contains(inicio)) {

@@ -37,7 +37,7 @@ public class TurnoSer {
     }
 
     private void validarFecha(LocalDate fecha,LocalTime hora) {
-        
+        LocalDate Fecha_minima = LocalDate.of(2025,3,5);
         if (fecha == null) {
             throw new IllegalArgumentException("La fecha no puede ser nula");
         }
@@ -45,7 +45,11 @@ public class TurnoSer {
             throw new IllegalArgumentException("La fecha no puede ser anterior a hoy");
         }
         if (turnoRepository.existsByFechaAndHora(fecha, hora)) {
-            throw new IllegalArgumentException("Ya existe un evento para la fecha: ");
+            throw new IllegalArgumentException("Ya existe un turno para la fecha: ");
+        }
+        if(fecha.isBefore(Fecha_minima))
+        {
+            throw new IllegalArgumentException("Los turnos deben ser a partir del 04-03-2025");
         }
     
     }
