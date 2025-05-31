@@ -24,13 +24,13 @@ public class Propiedades {
         secciones.add("PRECIOS");
         secciones.add("TURNO");
 
-        articulos.put("SOFTLISO", 14000);
-        articulos.put("SOFTDISEÑOSIMPLE", 15500);
-        articulos.put("SOFTFULL", 16000);
-        articulos.put("SOFTAPLIQUES", 18000);
-        articulos.put("SEMI", 12000);
-        articulos.put("CAPPING", 13500);
-        articulos.put("PRESSON", 9000);
-        articulos.put("PRESSONFULLSET", 13000);
+        articulos.put("SOFTLISO", 17000);
+        articulos.put("SOFTDISEÑOSIMPLE", 17500);
+        articulos.put("SOFTFULL", 20000);
+        articulos.put("SOFTAPLIQUES", 20000);
+        articulos.put("SEMI", 15500);
+        articulos.put("CAPPING", 15500);
+        articulos.put("PRESSON", 13000);
+        articulos.put("PRESSONFULLSET", 16500);
     }
 }
